@@ -3,13 +3,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'ls'
-                sh 'npm install'
-                sh 'echo N | ng analytics off'
+                sh '/usr/bin/npm install'
                 sh 'ng build'
-                sh 'ls'
-                sh 'cd dist && ls'
-                sh 'cd dist/angular-ci-cd && ls'
+                sh 'cd dist/angular-ci-cd'
             }
         }
         stage('S3 Upload') {
