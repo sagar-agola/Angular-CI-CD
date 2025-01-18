@@ -1,6 +1,6 @@
 pipeline {
     agent {
-      docker {
+      any {
         image 'node:22.13-alpine'
         label 'red-host'
       }
