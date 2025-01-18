@@ -1,18 +1,7 @@
 pipeline {
-    agent {
-      any {
-        image 'node:22.13-alpine'
-        label 'red-host'
-      }
-    }
+    agent any
     stages {
-        stage('Build') {
-            steps {
-                sh 'npm install'
-                sh 'ng build'
-                sh 'cd dist/angular-ci-cd'
-            }
-        }
+        
         stage('S3 Upload') {
             steps {
                 withAWS(region: 'us-east-1', credentials: 'AWS S3 Full Access') {
