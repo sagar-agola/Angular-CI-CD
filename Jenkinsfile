@@ -1,7 +1,7 @@
 pipeline {
     agent {
       docker {
-        image 'node:22.13-alpine''
+        image 'node:22.13-alpine'
         label 'red-host'
       }
     }
