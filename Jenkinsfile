@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh '/usr/bin/npm install'
+                sh 'npm install'
                 sh 'ng build'
                 sh 'cd dist/angular-ci-cd'
             }
