@@ -2,7 +2,9 @@ pipeline {
     agent any
     stages {
         stage('move') {
-          sh 'cd dist/angular-ci-cd/browser'
+          steps {
+            sh 'cd dist/angular-ci-cd/browser'
+          }
         }
         stage('S3 Upload') {
             steps {
